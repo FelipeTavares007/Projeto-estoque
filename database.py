@@ -37,21 +37,21 @@ def listar_produtos():
     return produtos
 
 
-def atualizar_quantidade(id, nova_quantidade):
+def atualizar_quantidade(quantidade, nome):
     conexao = sqlite3.connect("estoque.db")
     cursor = conexao.cursor()
-    cursor.execute("UPDATE produtos SET quantidade = ? WHERE id = ?",
-    (nova_quantidade, id)
+    cursor.execute("UPDATE produtos SET quantidade = ? WHERE nome = ?  COLLATE NOCASE ",
+(quantidade, nome)
     )
     conexao.commit()
     conexao.close()
 
 
-def deletar_produto(id):
+def deletar_produto(nome):
     conexao = sqlite3.connect("estoque.db")
     cursor = conexao.cursor()
-    cursor.execute("DELETE FROM produtos WHERE id = ?",
-        (id,)
+    cursor.execute("DELETE FROM produtos WHERE nome = ? COLLATE NOCASE",
+        (nome,)
 
     )
     conexao.commit()
