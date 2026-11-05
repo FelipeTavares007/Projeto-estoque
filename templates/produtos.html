@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de Produtos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Estoque</h1>
@@ -11,15 +12,23 @@
         <th> Nome </th>
         <th> Quantidade </th>
         <th> Preço </th>
+        <th> Ação </th>
     </tr>
     {% for item in produtos %}
-        <tr>
-            <td>{{item[1]}}</td>
-            <td>{{item[2]}}</td>
-            <td>{{item[3]}}</td>
-        </tr>
-    {% endfor %}
+    <tr>
+        <td>{{item[1]}}</td>
+        <td>{{item[2]}}</td>
+        <td>{{item[3]}}</td>
+        <td>
+            <form method="POST" action="/excluir">
+                <input type="hidden" name="nome" value="{{item[1]}}">
+                <button type="submit">Excluir</button>
+            </form>
+        </td>
+    </tr>
+{% endfor %}
 </table>
+
 
 </body>
 </html>

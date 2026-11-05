@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-from database import criar_tabela, listar_produtos, cadastrar_produto
+from database import criar_tabela, listar_produtos, cadastrar_produto, deletar_produto
 
 
 app = Flask(__name__)
@@ -20,6 +20,12 @@ def cadastro1():
         cadastrar_produto(nome, quantidade, preco)
         return redirect("/produtos")
     return render_template("cadastro.html")
+
+@app.route('/excluir', methods=["POST"])
+def excluir():
+    nome = request.form["nome"]
+    deletar_produto(nome)
+    return redirect("/produtos")
 
 if __name__ == '__main__':
     app.run()

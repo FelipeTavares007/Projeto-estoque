@@ -1,0 +1,78 @@
+/* Fundo e fonte da página inteira */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    max-width: 800px;      /* limita a largura do conteúdo */
+    margin: 40px auto;     /* "auto" nas laterais centraliza */
+    padding: 0 16px;
+}
+
+h1 {
+    color: #1f3a5f;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;   /* junta as bordas das células */
+    background-color: white;
+}
+
+th, td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #1f3a5f;
+    color: white;
+}
+
+/* Linha fica destacada quando o mouse passa por cima */
+tr:hover td {
+    background-color: #eef3f9;
+}
+
+/* Botão de excluir (só os que estão dentro da tabela) */
+td button {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+td button:hover {
+    background-color: #962d22;
+}
+
+/* Formulário de cadastro */
+label {
+    display: block;           /* cada rótulo numa linha */
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    box-sizing: border-box;   /* o padding não aumenta a largura */
+}
+
+/* Botão do formulário (fora da tabela) */
+form button {
+    margin-top: 16px;
+    background-color: #1f3a5f;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+}
