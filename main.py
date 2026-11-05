@@ -10,7 +10,6 @@ def cadastro():
 
 def excluir():
     nome = input("Qual produto quer excluir: ")
-    print(repr(nome))
     deletar_produto(nome)
 
 def lista():

@@ -1,13 +1,25 @@
-from flask import Flask
+from flask import Flask, render_template, request, redirect
+from database import criar_tabela, listar_produtos, cadastrar_produto
+
 
 app = Flask(__name__)
 
+criar_tabela()
 
-@app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
+@app.route('/produtos')
+def produtos():  # put application's code here
+    lista = listar_produtos()
+    return render_template("produtos.html", produtos=lista)
 
-
+@app.route('/cadastro', methods=["GET", "POST"])
+def cadastro1():
+    if request.method == "POST":
+        nome = request.form["nome"]
+        quantidade = int(request.form["quantidade"])
+        preco = int(request.form["preco"])
+        cadastrar_produto(nome, quantidade, preco)
+        return redirect("/produtos")
+    return render_template("cadastro.html")
 
 if __name__ == '__main__':
     app.run()

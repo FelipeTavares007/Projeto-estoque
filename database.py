@@ -15,7 +15,7 @@ def criar_tabela():
     conexao.commit()
     conexao.close()
 
-criar_tabela()
+
 
 def cadastrar_produto(nome, quantidade, preco):
     conexao = sqlite3.connect("estoque.db")
@@ -58,4 +58,3 @@ def deletar_produto(nome):
     conexao.close()
 
 
-print(listar_produtos())
