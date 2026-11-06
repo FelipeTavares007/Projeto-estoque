@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Produtos</title>
+    <title> Lista de Produtos </title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -30,7 +30,7 @@
                 <input type="hidden" name="nome" value="{{item[1]}}">
                 <button type="submit">Excluir</button>
             </form>
-            <a href="{{ url_for('alterar', nome=item[1]) }}">Alterar</a>
+            <a class="botao-alterar" href="{{ url_for('alterar1', nome=item[1]) }}">Alterar</a>
         </td>
     </tr>
 {% endfor %}

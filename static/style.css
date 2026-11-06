@@ -101,3 +101,19 @@ nav h2 {
     margin: 0 0 16px 0;   /* espaço embaixo, antes dos links */
     font-size: 20px;
 }
+
+/* Botão Alterar (é um link, estilizado pra parecer botão) */
+.botao-alterar {
+    display: inline-block;        /* permite padding e margem de verdade */
+    background-color: #2d8a4e;
+    color: white;
+    padding: 6px 12px;
+    margin-left: 0px;             /* afasta do botão Excluir */
+    border-radius: 4px;
+    text-decoration: none;        /* tira o sublinhado do link */
+    font-size: 13px;
+}
+
+.botao-alterar:hover {
+    background-color: #226b3c;
+}

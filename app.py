@@ -27,7 +27,7 @@ def excluir():
     return redirect("/produtos")
 
 @app.route('/alterar/<nome>', methods=["POST", "GET"])
-def alterar(nome):
+def alterar1(nome):
     if request.method == "POST":
         quantidade = int(request.form["quantidade"])
         atualizar_quantidade(quantidade, nome)
