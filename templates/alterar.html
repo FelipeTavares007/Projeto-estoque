@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Alterar Quantidade</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <h2> ☰ Menu </h2>
+        <a href="/produtos">Produtos</a>
+        <a href="/cadastro">Cadastrar</a>
+    </nav>
+
+    <h1>Alterar quantidade de: {{ nome }}</h1>
+
+    <form method="POST">
+        <label>Nova quantidade:</label>
+        <input type="number" name="quantidade">
+        <button type="submit">Salvar</button>
+    </form>
+</body>
+</html>
