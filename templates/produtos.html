@@ -6,7 +6,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Estoque</h1>
+    <nav>
+    <h2> ☰ Menu</h2>
+        <br>
+    <a href="/cadastro">Cadastrar</a>
+        <a href="/produtos">Produtos</a>
+    </nav>
+    <h1>    Estoque</h1>
 <table>
     <tr>
         <th> Nome </th>
@@ -24,6 +30,7 @@
                 <input type="hidden" name="nome" value="{{item[1]}}">
                 <button type="submit">Excluir</button>
             </form>
+            <a href="{{ url_for('alterar', nome=item[1]) }}">Alterar</a>
         </td>
     </tr>
 {% endfor %}

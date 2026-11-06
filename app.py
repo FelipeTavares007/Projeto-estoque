@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, redirect
-from database import criar_tabela, listar_produtos, cadastrar_produto, deletar_produto
-
+from database import criar_tabela, listar_produtos, cadastrar_produto, deletar_produto, atualizar_quantidade
 
 app = Flask(__name__)
 
@@ -26,6 +25,15 @@ def excluir():
     nome = request.form["nome"]
     deletar_produto(nome)
     return redirect("/produtos")
+
+@app.route('/alterar/<nome>', methods=["POST", "GET"])
+def alterar(nome):
+    if request.method == "POST":
+        quantidade = int(request.form["quantidade"])
+        atualizar_quantidade(quantidade, nome)
+        return redirect("/produtos")
+    return render_template("alterar.html", nome=nome)
+
 
 if __name__ == '__main__':
     app.run()

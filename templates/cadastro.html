@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+<nav>
+    <h2> ☰ Menu </h2>
+    <br>
+        <a href="/cadastro">Cadastrar</a>
+    <a href="/produtos">Produtos</a>
+</nav>
+
     <form method="POST">
     <label>Nome:</label>
         <input type="text" name="nome">
