@@ -2,11 +2,13 @@ from database import criar_tabela, cadastrar_produto, listar_produtos, deletar_p
 
 criar_tabela()
 
+
 def cadastro():
     produto = str(input("Qual produto: "))
     preco = float(input("Qual o preco do produto: "))
     quantidade = int(input("Qual a quantidade de produtos: "))
     cadastrar_produto(produto, quantidade, preco)
+
 
 def excluir():
     nome = input("Qual produto quer excluir: ")
